@@ -12,7 +12,7 @@ Installation
 Obtain Anaconda
 ===============
 
-Go grab a copy of the `Anaconda <https://www.continuum.io/downloads>`_ distribution from Continuum, Inc. Be sure to select
+Go grab a copy of the `Anaconda <https://www.continuum.io/downloads>`_ distribution from Continuum Analytics, Inc. Be sure to select
 the installation medium appropriate for your operating system and architecture.
 
 Installation instructions for your platform are also available on the download page.
