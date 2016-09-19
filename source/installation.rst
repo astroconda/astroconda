@@ -8,15 +8,16 @@ Before you begin, the list below contains known requirements and limitations of 
     - AstroConda supports Linux (glibc ≥ 2.12) and Mac OS X (≥ 10.7; 10.6 is NOT supported)
     - AstroConda contains packages for 64-bit [#archnote]_ Python 2.7 and 3.5.
     - Conda only supports BASH and ZSH environments. No other environments are supported. If you are a native CSH user, please execute ``bash -l`` prior to performing the procedures detailed in this guide.
-    - IRAF users: After configuring Anaconda for use with AstroConda, please refer to the :ref:`iraf_install` section of this guide.
+    - IRAF users: After configuring Anaconda for use with AstroConda, refer to the :ref:`iraf_install` section of this guide to continue your installation.
 
 Obtain Anaconda
 ===============
 
 .. note::
 
-    Installing Anaconda3 will not prevent you from using Python 2. ``conda`` is a versatile tool which enables the
-    user to deploy multiple independent Python environments, at-will, under a single Anaconda installation. You may have trouble following along with this guide if you choose to install Anaconda2.
+    Installing Anaconda3 will not prevent you from using Python 2.
+
+    ``conda`` allows you to to deploy multiple independent Python environments, at-will, under a single Anaconda installation. You may have trouble following along with this guide if you choose to install Anaconda2.
 
 
 Go grab a copy of `Anaconda3 <https://www.continuum.io/downloads>`_ from Continuum Analytics, Inc. Be sure to select the installation medium appropriate for your operating system (Linux or OS X) and architecture (64-bit). The OS X GUI installer may cause side-effects, such as changing permissions of files in your home directory to ``root:wheel``, or mistakenly creating a system-wide installation under ``/anaconda`` instead of your personal home directory. To avoid this situation perform a command-line installation instead.
