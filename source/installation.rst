@@ -2,15 +2,13 @@
 Installation
 ############
 
-Before you begin, the list below contains all known requirements and limitations of AstroConda:
+Before you begin, the list below contains known requirements and limitations of AstroConda:
 
+    - This documentation targets Anaconda3 (i.e. Python 3)
     - AstroConda supports Linux (glibc ≥ 2.12) and Mac OS X (≥ 10.7; 10.6 is NOT supported)
-    - AstroConda packages support Python versions 2.7 or 3.5 on 64-bit platforms. (If you don't know whether you have a 32-bit or 64-bit processor, assume you have 64-bit.)
+    - AstroConda contains packages for 64-bit [#archnote]_ Python 2.7 and 3.5.
     - Conda only supports BASH and ZSH environments. No other environments are supported. If you are a native CSH user, please execute ``bash -l`` prior to performing the procedures detailed in this guide.
-    - If :abbr:`IRAF (Image Reduction and Analysis Facility)` is required as part of your personal workflow it is *highly recommended* you install Anaconda for Python 2.7 (see :ref:`iraf_python3`).
-    - If you do not use :abbr:`IRAF (Image Reduction and Analysis Facility)`, choose the Anaconda installer with the Python version best suited for your scripting needs.
-    - This documentation specifically targets Anaconda3 (i.e. Python 3) installations, however, the commands in this guide should work interchangeably between Anaconda3 and Anaconda2.
-
+    - IRAF users: After configuring Anaconda for use with AstroConda, please refer to the :ref:`iraf_install` section of this guide.
 
 Obtain Anaconda
 ===============
@@ -61,6 +59,8 @@ This will prompt you to confirm the installation of all the STScI packages avail
 
     To deactivate the ``astroconda`` environment, close your terminal window or run ``source deactivate``.
 
+
+.. _iraf_install:
 
 Legacy Installation (with IRAF)
 -------------------------------------
@@ -121,3 +121,6 @@ The Python-standard tool ``pip`` is also available to install packages distribut
     $ source activate astroconda
     $ pip install nameofpkg
 
+.. rubric:: Footnotes
+
+.. [#archnote] Intel x86_64 architecture
