@@ -111,7 +111,7 @@ For scientific packages available through Anaconda, installation is as simple as
 .. code-block:: sh
 
     $ source activate astroconda
-    $ conda install nameofpkg
+    $ conda install name_of_pkg
 
 Often, the easiest way to see if the package is available through Anaconda is to try installing it. The full list of available packages is here: http://repo.continuum.io/pkgs/.
 
@@ -120,7 +120,7 @@ The Python-standard tool ``pip`` is also available to install packages distribut
 .. code-block:: sh
 
     $ source activate astroconda
-    $ pip install nameofpkg
+    $ pip install name_of_pkg
 
 .. rubric:: Footnotes
 
