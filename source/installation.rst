@@ -7,7 +7,7 @@ Before you begin, the list below contains known requirements and limitations of 
     - This documentation targets Anaconda3 (i.e. Python 3)
     - AstroConda supports Linux (glibc ≥ 2.12) and Mac OS X (≥ 10.7; 10.6 is NOT supported)
     - AstroConda contains packages for 64-bit [#archnote]_ Python 2.7 and 3.5.
-    - Conda only supports BASH and ZSH environments. No other environments are supported. If you are a native CSH user, please execute ``bash -l`` prior to performing the procedures detailed in this guide.
+    - Conda only supports BASH and ZSH environments. If you are a native CSH user, execute ``bash -l`` prior to performing the procedures detailed in this guide.
     - IRAF users: After configuring Anaconda for use with AstroConda, refer to the :ref:`iraf_install` section of this guide to continue your installation.
 
 Obtain Anaconda
