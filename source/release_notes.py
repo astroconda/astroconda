@@ -26,8 +26,9 @@ header = """
 Release Notes
 =============
 
-Individual release notes for packages can be found on their individual
-pages, linked below.
+For individual package release notes, please follow the links below.
+Note that not all packages have release notes, and may simply provide
+numbered releases.
 
 """
 
