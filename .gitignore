@@ -2,3 +2,6 @@
 build
 source/*.html
 TOKEN
+
+source/package_manifest.rst
+source/release_notes.rst

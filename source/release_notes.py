@@ -19,6 +19,8 @@ except ImportError:
     print('pip install https+git://github.com/sigmavirus24/github3.py')
     exit(1)
 
+from package_manifest import ARCHITECTURE, get_repodata
+
 
 header = """
 Release Notes
@@ -33,7 +35,23 @@ item = """
 -  `{} <{}>`__
 """
 
+#-------------------------------------------------------------------------------
+
 def any_releases(url):
+    """Check if there are any releases in a given github release page
+
+    Parameters
+    ----------
+    url: str
+        URL of a valid github reposoitory release pages
+
+    Returns
+    -------
+    any_releases: bool
+        True if there are found releases, False otherwise
+
+    """
+
     no_release_msg = b"<h3>There aren\xe2\x80\x99t any releases here</h3>"
 
     if no_release_msg in urlopen(url).read():
@@ -41,13 +59,35 @@ def any_releases(url):
 
     return True
 
+#-------------------------------------------------------------------------------
+
 def pull_release_notes(org, outfile):
+    """ Get urls for release notes for all astroconda packages
+
+    Only repositories that are included in ANY astroconda distribution (linux or OSX)
+    with tagged github releases will be included in the output release notes
+    rst file.
+
+    Parameters
+    ----------
+    org: github3 organization instance
+        All repositories from this org will be parsed for releases
+    outfile: str
+        Filename to write urls to.
+
+    """
+
+    astroconda_packages = {item['name'] for arch in ARCHITECTURE for item in get_repodata(arch).values()}
+
     with open(outfile, 'w+') as mdout:
         # Write header (main title)
         print(header, file=mdout)
 
         # Sort repositories inline alphabetically, because otherwise its seemingly random order
         for repository in sorted(list(org.iter_repos()), key=lambda k: k.name):
+
+            if not repository.name in astroconda_packages:
+                continue
 
             release_url = repository.html_url + '/releases'
 
@@ -56,8 +96,12 @@ def pull_release_notes(org, outfile):
 
             print(item.format(repository.name.upper(), release_url), file=mdout)
 
+#-------------------------------------------------------------------------------
 
 def generate_release_notes():
+    """Main function to create the release_notes.rst pages
+    """
+
     owner = 'spacetelescope'
     org = github3.organization(owner)
 
@@ -69,6 +113,7 @@ def generate_release_notes():
         print(e)
         exit(1)
 
+#-------------------------------------------------------------------------------
 
 if __name__ == '__main__':
     generate_release_notes()
