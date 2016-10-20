@@ -10,7 +10,6 @@ To receive AstroConda announcements, or to engage in general discussion, feel fr
 
 .. toctree::
    :maxdepth: 2
-   :titlesonly:
 
    installation
    releases
