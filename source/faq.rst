@@ -128,3 +128,15 @@ Will AstroConda interfere with other scientific distributions (e.g. SciSoft)?
 
 **Probably**, however unlike Ureka, we do not impose any restrictions on your environment or issue compatibility warnings at run-time. It is your responsibility to maintain a functional shell environment so [insert scientific distribution here] does not conflict with your Anaconda installation.
 
+Ds9 - Cannot select regions
+===========================
+
+The default edit mode is now ``None`` rather than ``Region``. To select ``Region`` as the default editing mode perform the steps listed here:
+
+- Click ``Edit``
+    - Click ``Preferences``
+        - On the left pane, select ``Menus and Buttons``
+        - On the right pane, click the ``Menu --`` drop-down menu beneath the ``Edit`` group
+        - Select ``Region`` (default is ``None``)
+    - Click the ``Save`` button at the bottom of the ``Preferences`` dialog box
+
