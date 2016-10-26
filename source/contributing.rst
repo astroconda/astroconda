@@ -11,6 +11,8 @@ Contributing Guide
 Guidelines
 ==========
 
+.. attention::
+
     The following packaging guidelines are subject to change at any time.
 
     - Please be respectful when commenting on pull-requests or issues.
@@ -21,6 +23,13 @@ Guidelines
     - Abandoned recipes may be moved into the ``deprecated`` directory at any time without warning. (i.e. The package no longer compiles, has been obsoleted, or presents a conflict that cannot be resolved, etc).
     - Packages derived from ``deprecated`` recipes will remain available in AstroConda for historical purposes (i.e. to preserve backwards compatibility).
 
+Bugs, questions, and requests
+=============================
+
+Please open a new issue or send us a pull request for bugs, feedback, questions, or enhancements. 
+
+*  For documentation issues use the [astroconda issue tracker](https://github.com/astroconda/issue)
+*  For recipie issues, use the [astroconda-contrib issue tracker](https://github.com/astroconda-contrib/issue)
 
 
 Adding a recipe to astroconda-contrib
