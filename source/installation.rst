@@ -4,7 +4,7 @@ Installation
 
 Before you begin, the list below contains known requirements and limitations of AstroConda:
 
-    - This documentation targets Anaconda3 (i.e. Python 3)
+    - This documentation targets Anaconda3 (i.e. Python 3), but the installation instructions work equally well with any of the Anaconda distributions.
     - AstroConda supports Linux (glibc ≥ 2.12) and Mac OS X (≥ 10.7; 10.6 is NOT supported)
     - AstroConda contains packages for 64-bit [#archnote]_ Python 2.7 and 3.5.
     - Conda only supports BASH and ZSH environments. If you are a native CSH user, execute ``bash -l`` prior to performing the procedures detailed in this guide.
@@ -66,7 +66,20 @@ This will prompt you to confirm the installation of all the STScI packages avail
 Legacy Installation (with IRAF)
 -------------------------------------
 
+
 The developers of AstroConda have limited resources to support :abbr:`IRAF (Image Reduction and Analysis Facility)`, but users that require the ability to run IRAF and PyRAF tasks may want to install it through AstroConda. For help with many issues that come up during installation or use, please visit the `PyRAF FAQ <http://www.stsci.edu/institute/software_hardware/pyraf/pyraf_faq>`_. If you are running Linux be sure to visit `this FAQ entry <faq.html#in-linux-how-do-i-install-iraf-s-32-bit-dependencies>`_ for a quick guide to installing IRAF's 32-bit dependencies.
+
+.. attention::
+
+  Usage of IRAF currently requires running in a Python 2.7 environment.
+  The instructions below will install IRAF into a separate, Python 2.7,
+  environment regardless of your default Python version or which environments
+  you've created previously.
+
+  This will keep your IRAF environment separate from your other day-to-day
+  environments, which will facilitate updating only one or the other, and allow
+  easier transition off in the event of deprecation.  Simply ``source activate iraf27``
+  for iraf work and ``source activate astroconda`` for day-to-day use.
 
 .. code-block:: sh
 
@@ -77,17 +90,6 @@ Then, just as with the default installation, it is necessary to activate the env
 .. code-block:: sh
 
     $ source activate iraf27
-
-.. note::
-
-    Support for using Python 2.7 and IRAF is being gradually phased out by STScI maintainers. In the transitional period, you may wish to install AstroConda with the default settings but maintain a Python 2.7 + IRAF environment for testing. The following commands create both an ``astroconda`` environment with the default settings, and ``iraf27`` environment with IRAF.
-
-    .. code-block:: sh
-
-        $ conda create -n astroconda stsci
-        $ conda create -n iraf27 python=2.7 iraf pyraf stsci
-
-    Then, simply ``source activate astroconda`` for day-to-day use or ``source activate iraf27`` for work that requires IRAF. These two environments will be managed separately, allowing you to update only one or the other (see :doc:`updating`).
 
 Fine-tuning the Installation
 ============================

@@ -26,10 +26,10 @@ Guidelines
 Bugs, questions, and requests
 =============================
 
-Please open a new issue or send us a pull request for bugs, feedback, questions, or enhancements. 
+Please open a new issue or send us a pull request for bugs, feedback, questions, or enhancements.
 
-*  For documentation issues use the [astroconda issue tracker](https://github.com/astroconda/issue)
-*  For recipie issues, use the [astroconda-contrib issue tracker](https://github.com/astroconda-contrib/issue)
+*  For documentation issues use the `astroconda issue tracker <https://github.com/astroconda/issue>`_
+*  For recipe issues, use the `astroconda-contrib issue tracker <https://github.com/astroconda-contrib/issue>`_
 
 
 Adding a recipe to astroconda-contrib
