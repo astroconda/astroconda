@@ -2,6 +2,48 @@
 F.A.Q.
 ######
 
+Could not find URL: http://ssb.stsci.edu/astroconda/...
+=======================================================
+
+This error may occur if...
+
+- You are not connected to the internet
+- Your network requires a proxy (outside the scope of this FAQ)
+- STScI is experiencing a network or power outage
+- The AstroConda package repository crashed or rebooted due to routine patching
+
+If you have verified your internet connection is functioning properly but our parent site (http://www.stsci.edu) is unresonsive, then feel free to try our mirror.
+
+Currently there are two ways to access it:
+
+Using conda directly
+^^^^^^^^^^^^^^^^^^^^
+
+The basic ``conda`` installation commands accept ``-c`` or ``--channel`` argument, which allows you to select a different resository to install packages from.
+
+.. code-block:: yaml
+
+    conda {create|install|update} [-n name] -c http://astroconda.org/channel/main [[pkg] ...]
+
+    # Examples
+    conda create -n astroconda -c http://astroconda.org/channel/main stsci
+    conda install -n astroconda -c http://astroconda.org/channel/main webbpsf
+    conda update -n astroconda -c http://astroconda.org/channel/main --all
+
+
+Using a modified .condarc
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If our primary AstroConda channel appears to be down for longer than ten minutes, and the direct method isn't convenient, you can add the URL to your ``~/.condarc`` configuration.
+
+.. code-block:: yaml
+
+    channels:
+      #- http://ssb.stsci.edu/astroconda
+      - http://astroconda.org/channel/main
+      - defaults
+
+We recommend against using the astroconda.org mirror on a regular basis. The bandwidth and hardware are not better or faster than the primary server. If the reason for switching to the mirror has been resolved, you should go back to using the primary.
 
 After "conda create -n ..." why does "source activate astroconda" fail?
 ============================================================================
@@ -102,8 +144,7 @@ Why is IRAF 32-bit instead of 64-bit?
 
 Many of the IRAF tasks that we include with AstroConda are so old that they cannot be compiled as 64-bit executables without significant changes to the source code. Because of this restriction, we always build IRAF as a 32-bit program, even for our 64-bit distributions.
 
-In Linux, how do I install IRAF's 32-bit dependencies?
-------------------------------------------------------
+*In Linux, how do I install IRAF's 32-bit dependencies?*
 
 Debian >=7, Ubuntu >=14.04
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
