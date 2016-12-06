@@ -19,7 +19,7 @@ Currently there are two ways to access it:
 Using conda directly
 ^^^^^^^^^^^^^^^^^^^^
 
-The basic ``conda`` installation commands accept ``-c`` or ``--channel`` argument, which allows you to select a different repository to install packages from.
+The basic ``conda`` installation commands accept ``-c`` or ``--channel`` argument, which allows you to select a different resository to install packages from.
 
 .. code-block:: yaml
 
