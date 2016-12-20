@@ -175,7 +175,7 @@ What's with the never-ending stream of bracket encapsulated keywords, you ask? C
 
 The ``requirements`` section may be confusing to some, so let's clarify the distinction between ``build`` and ``run`` before diving in. The ``build`` section defines Conda packages required at compile-time (i.e. ``python setup.py install``), whereas the ``run`` section lists Conda packages required at install-time (i.e. ``conda install [package]``).
 
-As recipe maintainer the method used to dependency discover is that of trial and error. For many Python packages obtained via PyPi, it is easy enough to visually examine ``setup.py`` or ``requirements.txt`` to get a good idea of the recipes you need to depend on. Some package may require several iterations of executing ``conda-build`` and returning to your recipe in the editor to append more packages.
+As recipe maintainer the method used to dependency discover is that of trial and error. For many Python packages obtained via PyPi, it is easy enough to visually examine ``setup.py`` or ``requirements.txt`` to get a good idea of the recipes you need to depend on. Some package may require several iterations of executing ``conda build`` and returning to your recipe in the editor to append more packages.
 
 As we can see below, ``sympy`` requires ``mpmath``, ``setuptools`` and ``python`` to *build* the recipe, but only ``mpmath`` and ``python`` to *run it* successfully after installation:
 
@@ -190,7 +190,7 @@ As we can see below, ``sympy`` requires ``mpmath``, ``setuptools`` and ``python`
         - mpmath
         - python x.x
 
-What does the ``x.x`` imply exactly? This instructs ``conda-build`` *not* to proceed unless ``python=[version]`` has been issued as an argument on the commandline. If ``x.x`` is omitted here, the recipe will choose the version of Python currently active in your environment. In most cases it is best to be explicit rather than implicit when it comes to defining version requirements in Conda.
+What does the ``x.x`` imply exactly? This instructs ``conda build`` *not* to proceed unless ``python=[version]`` has been issued as an argument on the commandline. If ``x.x`` is omitted here, the recipe will choose the version of Python currently active in your environment. In most cases it is best to be explicit rather than implicit when it comes to defining version requirements in Conda.
 
 The ``test`` section defines few useful lists, ``imports``, ``commands``, and ``requires``. While these are not *required* to be used in any given recipe, we do use them in AstroConda. The ``imports`` section is a list of Python module imports, the ``commands``
 are executed in a basic shell environment, and finally ``requires`` defines any extraneous packages to be installed into the environment before running the tests.
@@ -216,7 +216,7 @@ If ``sympy`` provided a commandline utility named ``sympy-show``, you would use 
         commands:
             - sympy-show --help
 
-If a program returns greater than zero ``conda-build`` will fail as if it observed an error. Not all programs return zero after issuing ``--help`` (or an equivalent argument). Due to this, you may need to omit this style of test.
+If a program returns greater than zero ``conda build`` will fail as if it observed an error. Not all programs return zero after issuing ``--help`` (or an equivalent argument). Due to this, you may need to omit this style of test.
 
 It will not hurt to keep the ``commands`` section populated but disabled with a note describing why it doesn't work. Others will find this information useful. Given this scenario, the optimal approach would be to contact the developers and plead with them to
 normalize the exit value.
@@ -228,6 +228,7 @@ Below is our ``sympy`` final recipe. Despite the overwhelming use of JINGA2 in o
 
     {% set name = 'sympy' %}
     {% set version = '1.0' %}
+    {% set number = '0' %}
 
     about:
         home: http://sympy.org
@@ -261,14 +262,14 @@ Before we can issue a pull request on GitHub, we first ensure it builds, tests, 
     cd ..
     # i.e. /path/to/astroconda-contrib
 
-Now run ``conda-build`` to compile our ``sympy`` recipe into a Conda package. In the example below we are building against
+Now run ``conda build`` to compile our ``sympy`` recipe into a Conda package. In the example below we are building against
 Python 3.5:
 
 .. code-block:: sh
 
-    conda-build -c http://ssb.stsci.edu/astroconda --skip-existing --python=3.5 sympy
+    conda build -c http://ssb.stsci.edu/astroconda --skip-existing --python=3.5 sympy
 
-That's probably a bit more involved than you thought. Let's break it down. We issue ``-c [URL]`` which instructs the build to utilize the AstroConda channel while checking for package dependencies (i.e. the recipe's ``requirements`` section). Secondly, we issue ``--skip-existing`` to prevent ``conda-build`` from rebuilding dependencies discovered in the local astroconda-contrib directory. That is to say, if a package defined as a requirement exists remotely, it will then download and install it, rather than rebuild it from scratch. ``--python=`` is self-explanatory, and the final argument is the name of the recipe(s) we intend to build.
+That's probably a bit more involved than you thought. Let's break it down. We issue ``-c [URL]`` which instructs the build to utilize the AstroConda channel while checking for package dependencies (i.e. the recipe's ``requirements`` section). Secondly, we issue ``--skip-existing`` to prevent ``conda build`` from rebuilding dependencies discovered in the local astroconda-contrib directory. That is to say, if a package defined as a requirement exists remotely, it will then download and install it, rather than rebuild it from scratch. ``--python=`` is self-explanatory, and the final argument is the name of the recipe(s) we intend to build.
 
 At this point, if the build was successful, our Conda package (a bzipped tarball) called ``sympy-1.0-py35_0.tar.bz2`` is emitted to ``/path/to/anaconda/conda-bld/[os-arch]/``. This directory is a local Conda package repository.
 
@@ -310,3 +311,98 @@ the drop-down menu (the default will read: "Branch: master", next to a black dow
 From here, you may wish to edit the title of your pull request and add initial comments or notes regarding what you have done, or list any work that may still need to be done. After submitting your pull request, a member of the Science Software Branch at STScI, or fellow contributors will review the requested changes, ask questions, offer feedback or advice.
 
 At this point if everything appears to be in order your recipe will likely be merged, built, and incorporated into AstroConda!
+
+
+Updating a Recipe on AstroConda
+===============================
+
+Let's assume time has passed and our ``sympy`` package from the previous example is no longer up to date with what's generally available on GitHub. Updating recipes is a fairly straight forward process.
+
+At the top of the file you will remember we have a few variables defined encapsulated by ``{% %}``. These ``jinja2`` variables control the name, version, and build revision of the recipe. Using variable interpolation saves time, because it's much easier to edit a single variable that effects an entire recipe, than it is to search/replace specific fields. Typos are also much easier to spot.
+
+``{{ name }}``, ``{{ version }}`` and ``{{ number }}`` expand to ``sympy``, ``1.0`` and ``0`` respectively:
+
+.. code-block:: yaml
+
+    {% set name = 'sympy' %}
+    {% set version = '1.0' %}
+    {% set number = '0' %}
+
+    [...]
+
+    build:
+        number: {{ number }}
+
+    [...]
+    source:
+        fn: {{ name }}-{{ version }}.tar.gz
+        url: https://github.com/{{ name }}/{{ name }}/releases/download/{{ name }}-{{ version }}/{{ name }}-{{ version }}.tar.gz
+
+
+So to update ``sympy`` to version ``1.2``, for example, you would perform the following steps in your forked ``astroconda-contrib`` repository.
+
+Checkout a new branch
+---------------------
+
+.. code-block:: sh
+
+   git checkout -tb update-sympy master
+
+Doing this ensures your new branch is based on ``master`` rather than your current branch, if any. It also keeps your ``master`` branch pristine, avoiding merge conflicts in the future.
+
+
+Make your modifications
+-----------------------
+
+.. code-block:: sh
+
+   $EDITOR sympy/meta.yaml
+
+   [...]
+   {% set version = '1.2' %}
+   #                  ^ Was '1.0', but not anymore.
+
+Now save and exit your editor.
+
+
+Review your modifications
+-------------------------
+
+As stated earlier, the fastest way to find out whether your recipe works correctly is to try building it for yourself.
+
+
+.. code-block:: sh
+
+    conda build -c http://ssb.stsci.edu/astroconda --skip-existing --python=2.7 sympy
+    conda build -c http://ssb.stsci.edu/astroconda --skip-existing --python=3.5 sympy
+
+Did it work? If not, review the error message and make changes accordingly.
+
+
+Commit your modifications
+-------------------------
+
+Assuming you are able to build the package locally, then you're ready to push your changes up to your fork.
+
+.. code-block:: sh
+
+   git add sympy/meta.yaml
+   git commit -m 'Update sympy 1.0 -> 1.2'
+   git push origin update-sympy
+
+
+Open a pull request
+-------------------
+
+See: `Using Pull Requests <https://help.github.com/articles/using-pull-requests/>`_
+
+1. Using your browser, visit the ``update-sympy`` branch of your fork:
+   https://github.com/YOUR_ACCOUNT/astroconda-contrib/tree/update-sympy
+
+2. Click the gray "New pull request" button
+
+3. Fill out the pull request form
+
+4. Click the green "Create pull request" button
+
+That's all there is to it. One of our maintainers will review the pull request and get back to you.
