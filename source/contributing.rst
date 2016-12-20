@@ -313,8 +313,8 @@ From here, you may wish to edit the title of your pull request and add initial c
 At this point if everything appears to be in order your recipe will likely be merged, built, and incorporated into AstroConda!
 
 
-Updating a Recipe on AstroConda
-===============================
+Updating a recipe in astroconda-contrib
+=======================================
 
 Let's assume time has passed and our ``sympy`` package from the previous example is no longer up to date with what's generally available on GitHub. Updating recipes is a fairly straight forward process.
 
@@ -322,7 +322,7 @@ At the top of the file you will remember we have a few variables defined encapsu
 
 ``{{ name }}``, ``{{ version }}`` and ``{{ number }}`` expand to ``sympy``, ``1.0`` and ``0`` respectively:
 
-.. code-block:: yaml
+.. code-block:: none
 
     {% set name = 'sympy' %}
     {% set version = '1.0' %}
