@@ -52,6 +52,15 @@ Linux     3.5     http://ssb.stsci.edu/conda/hstdp-2016.1/hstdp-2016.1-linux-py3
 OS X      3.5     http://ssb.stsci.edu/conda/hstdp-2016.1/hstdp-2016.1-osx-py35.2.txt
 ========  ======  ===
 
+2016.2
+++++++
+
+========  ======  ===
+PLATFORM  Python  URL
+========  ======  ===
+Linux     3.5     http://ssb.stsci.edu/conda/hstdp-2016.2/hstdp-2016.2-linux-py35.2.txt
+OS X      3.5     http://ssb.stsci.edu/conda/hstdp-2016.2/hstdp-2016.2-osx-py35.2.txt
+========  ======  ===
 
 Release Schema
 ==============
