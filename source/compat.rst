@@ -28,3 +28,14 @@ Alternative user actions:
 
   * Downgrade ``astropy`` to version 1.2.1 (i.e. ``conda install astropy=1.2.1``)
 
+Future
+======
+
+Drizzlepac
+----------
+
+* https://github.com/spacetelescope/drizzlepac/issues/14
+* https://github.com/spacetelescope/drizzlepac/issues/15
+* https://github.com/spacetelescope/drizzlepac/issues/16
+* https://github.com/spacetelescope/drizzlepac/issues/17
+* https://github.com/spacetelescope/drizzlepac/issues/21
