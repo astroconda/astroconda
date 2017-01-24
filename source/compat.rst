@@ -8,7 +8,7 @@ If you spot a compatibility problem not listed here please let us know by sendin
 
 .. note::
 
-  **You may be effected by an issue if you have updated your AstroConda environment on or after the dates listed in each section below.**
+  **You may be affected by an issue if you have updated your AstroConda environment on or after the dates listed in each section below.**
 
 
 12/23/2016
