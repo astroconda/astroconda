@@ -28,8 +28,14 @@ Alternative user actions:
 
   * Downgrade ``astropy`` to version 1.2.1 (i.e. ``conda install astropy=1.2.1``)
 
+
 Future
 ======
+
+A list of known deprecation warnings detected in regression tests managed by
+STScI Science Software Branch is available
+`here <http://ssb.stsci.edu/creature_report/daily_report.html>`_.
+This list is refreshed daily from "dev" test results.
 
 Drizzlepac
 ----------
@@ -39,3 +45,4 @@ Drizzlepac
 * https://github.com/spacetelescope/drizzlepac/issues/16
 * https://github.com/spacetelescope/drizzlepac/issues/17
 * https://github.com/spacetelescope/drizzlepac/issues/21
+* https://github.com/spacetelescope/drizzlepac/issues/27
