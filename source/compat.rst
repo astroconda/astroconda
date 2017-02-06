@@ -34,11 +34,14 @@ Future
 
 A list of known deprecation warnings detected in regression tests managed by
 STScI Science Software Branch is available
-`here <http://ssb.stsci.edu/creature_report/daily_report.html>`_.
-This list is refreshed daily from "dev" test results.
+`here <http://ssb.stsci.edu/creature_report/>`_.
+This list is refreshed daily from "dev" and "public" test results.
 
 Drizzlepac
 ----------
+
+These deprecation warnings have been fixed in "dev" but still affect
+the "public" distribution:
 
 * https://github.com/spacetelescope/drizzlepac/issues/14
 * https://github.com/spacetelescope/drizzlepac/issues/15
