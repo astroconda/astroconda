@@ -9,7 +9,7 @@ Installing Conda - The choice is yours
 
 AstroConda is a third-party addon channel designed for use with the Conda package management system, so therefore in order to install software provided by our channel, you must first install a basic Conda environment on your system. This can be achieved in multiple ways (described below). Our channel's software is compatible with both of the ``2`` and ``3`` variants of Continuum Analytics, Inc.'s Miniconda and Anaconda distributions (i.e. Miniconda2, Miniconda3, Anaconda2, and Anaconda3).
 
-Miniconda2 and Miniconda3 provide a bare-minimum Conda root environment with Python 2.7 or Python 3.x respectfully. (*Recommended*)
+Miniconda2 and Miniconda3 provide a bare-minimum Conda root environment with Python 2.7 or Python 3.x, respectively. (*Recommended*)
 
 Anaconda2 and Anaconda3 are Continuum Analytics Inc.'s flagship products, and provide a full-featured Conda root environment as well as hundreds of useful tools, libraries, and utilities by default.
 
