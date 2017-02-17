@@ -63,8 +63,7 @@ This list is refreshed daily from "dev" and "public" test results.
 Drizzlepac
 ----------
 
-These deprecation warnings have been fixed in "dev" but still affect
-the "public" distribution:
+These deprecation warnings have been fixed in `drizzlepac` 2.1.8, which is now available in AstroConda:
 
 * https://github.com/spacetelescope/drizzlepac/issues/14
 * https://github.com/spacetelescope/drizzlepac/issues/15
