@@ -15,7 +15,7 @@ If you spot a compatibility problem not listed here please let us know by sendin
 ==========
 
 NumPy v1.12.0 modified the way array slicing is handled and triggered
-a regression in the ``acstools`` and ``pysynphot `` packages:
+a regression in the ``acstools`` and ``pysynphot`` packages:
 
  * ``acstools <= 2.0.6`` - 2.0.7 released (Feb 16, 2017)
  * ``pysynphot <= 0.9.8.5`` - 0.9.8.6 released (Feb 21, 2017)
@@ -46,7 +46,7 @@ The following packages are known to be incompatible with this release:
 
   * ``calcos <= 3.1.8`` - Bugfix pending
   * ``costools <= 1.2.1`` - Bugfix pending
-  * ``fitsblender <= 0.2.6`` - 0.3.0 released (01/17/2017)
+  * ``fitsblender <= 0.2.6`` - 0.3.0 released (Jan 17, 2017)
 
 Recommended user actions:
 
@@ -68,7 +68,7 @@ This list is refreshed daily from "dev" and "public" test results.
 Drizzlepac
 ----------
 
-These deprecation warnings have been fixed in `drizzlepac` 2.1.8,
+These deprecation warnings have been fixed in ``drizzlepac`` 2.1.8,
 which is now available in AstroConda:
 
 * https://github.com/spacetelescope/drizzlepac/issues/14
