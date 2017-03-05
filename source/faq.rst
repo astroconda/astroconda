@@ -230,7 +230,7 @@ Debian >=7, Ubuntu >=14.04
     sudo dpkg --add-architecture i386
 
     sudo apt-get update
-    sudo apt-get install libc6:i386 libz1:i386 libncurses5:i386 libbz2-1.0:i386 libuuid1:i386 libxcb1:i386
+    sudo apt-get install libc6:i386 libz1:i386 libncurses5:i386 libbz2-1.0:i386 libuuid1:i386 libxcb1:i386 libxmu6:i386
 
 RHEL/CentOS >=6, Fedora >=14
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
