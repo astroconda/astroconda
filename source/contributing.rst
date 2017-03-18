@@ -28,8 +28,8 @@ Bugs, questions, and requests
 
 Please open a new issue or send us a pull request for bugs, feedback, questions, or enhancements.
 
-*  For documentation issues use the `astroconda issue tracker <https://github.com/astroconda/issue>`_
-*  For recipe issues, use the `astroconda-contrib issue tracker <https://github.com/astroconda-contrib/issue>`_
+*  For documentation issues use the `astroconda issue tracker <https://github.com/astroconda/astroconda/issues>`_
+*  For recipe issues, use the `astroconda-contrib issue tracker <https://github.com/astroconda/astroconda-contrib/issues>`_
 
 
 Adding a recipe to astroconda-contrib
