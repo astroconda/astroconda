@@ -35,6 +35,22 @@ If you spot a compatibility problem not listed here please let us know by sendin
 
   **You may be affected by an issue if you have updated your AstroConda environment on or after the dates listed in each section below.**
   
+2017-05-19
+==========
+
+Astropy removed yet another deprecated function in v2.0; namely ``io.fits.NumCode``.
+This function was called by ``stpyfits``, which gets used by in the HST pipeline
+as called by the ``drizzlepac`` to transparently handle ``_raw.fits`` HST data.
+The deprecation is addressed in order to allow the next release to work in the
+operational HST calibration pipeline build, HSTDP 2017.2
+(see https://github.com/spacetelescope/stsci.tools/pull/36).
+
+.. code-block:: python
+
+    >>> sdq = stpyfits.getdata("j9ot10icq_raw.fits", extname="DQ", extver=1)
+    WARNING: AstropyDeprecationWarning: The NumCode class attribute is deprecated and may be removed in a future version.
+        Use the module level constant BITPIX2DTYPE instead. [astropy.utils.decorators]
+  
 2017-05-02  
 ==========
 
