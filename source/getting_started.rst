@@ -64,20 +64,3 @@ Now append **one of the following** ``export`` commands that best matches the ou
 
 At this point, to assume the new environment with ``conda`` in your ``PATH``, open a new terminal or execute ``source ~/.bash_profile`` and continue on to :ref:`configure_astroconda_channel`.
 
-.. _configure_astroconda_channel:
-
-Configure Conda to use the Astroconda Channel
-=============================================
-
-In order to install packages directly from the AstroConda channel you will need to append our URL to Conda's channel search path.
-
-.. code-block:: sh
-
-    $ conda config --add channels http://ssb.stsci.edu/astroconda
-    # Writes changes to ~/.condarc
-
-Be aware that indiscriminately adding channels to your configuration, be it from `anaconda.org <https://anaconda.org>`_ or via direct-URL can effect the stability of software packages in your run-time environment.
-
-For example, if you add a channel found on anaconda.org because it contains a software package you're interested in, but it too provides the same software found in AstroConda, it's possible you may lose track of where packages are coming from. Or worse, the software you installed from the other channel was built incorrectly or did not account for a special case, so now the packages in your environment relying on this as a dependency could very well cease to function correctly.
-
-If you decide to have multiple channels defined in your configuration and bugs begin to appear, it may be best to check their origin before issuing a support ticket to help@stsci.edu. ``conda list`` can be used to display such information about the packages installed in your environment.

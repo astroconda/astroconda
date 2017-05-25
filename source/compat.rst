@@ -15,15 +15,15 @@ These versions of the conda package and environment management tool itself are k
 | 4.1.6                      |
 +----------------------------+
 
-If you have an indicated version of conda installed you may want to upgrade to a newer version with 
+If you have an indicated version of conda installed you may want to upgrade to a newer version with
 
 ``conda update conda``
 
 Once completed, check that the newly installed version is not indicated above as a problematic version. If it is indicated, you may have to downgrade to a previous version of conda in order to obtain one that has not been identified problematic.
 
-``conda search conda`` 
+``conda search conda``
 
-will display a list of all versions of conda available. Select a version from the search list that does not appear in the table above and run 
+will display a list of all versions of conda available. Select a version from the search list that does not appear in the table above and run
 
 ``conda install conda=<version>``.
 
@@ -34,7 +34,31 @@ If you spot a compatibility problem not listed here please let us know by sendin
 .. note::
 
   **You may be affected by an issue if you have updated your AstroConda environment on or after the dates listed in each section below.**
-  
+
+2017-05-24
+==========
+
+The method used to install IRAF via AstroConda has changed!
+
+Before today, AstroConda's ``iraf`` package provided a full IRAF installation in a single tarball. Not only did this take a long time to install, it has proven to be problematic, because updating even one line of code required us to repackage >700MBs of data. As of now, IRAF has been split into several smaller packages (``iraf.[pkg]``) and controlled via a single meta-package: ``iraf-all``.  The new ``pyraf-all`` meta-package installs ``pyraf`` along with packages identified to require ``pyraf`` and ``iraf``. The installation section, :ref:`iraf_install`, has been updated to reflect the changes detailed below.
+
+To install a new IRAF environment:
+
+.. code-block:: sh
+
+    $ conda create -n iraf27 python=2.7 iraf-all pyraf-all stsci
+    $ source activate iraf27
+
+If you plan to update an existing "iraf27" environment, do the following:
+
+.. code-block:: sh
+
+    $ conda install -n iraf27 iraf-all pyraf-all
+    $ source activate iraf27
+
+``conda update`` will not work as expected in this case, due to the fact that the ``iraf`` package no longer serves the same purpose. After ``iraf-all`` has been installed you may continue to use ``conda update --all`` to perform general updates.
+
+
 2017-05-19
 ==========
 
@@ -50,8 +74,8 @@ operational HST calibration pipeline build, HSTDP 2017.2
     >>> sdq = stpyfits.getdata("j9ot10icq_raw.fits", extname="DQ", extver=1)
     WARNING: AstropyDeprecationWarning: The NumCode class attribute is deprecated and may be removed in a future version.
         Use the module level constant BITPIX2DTYPE instead. [astropy.utils.decorators]
-  
-2017-05-02  
+
+2017-05-02
 ==========
 
 A collection of errant release candidate packages were published to the AstroConda public channel (http://ssb.stsci.edu/astroconda) on Friday, Apr 28, 2017 around 3:45pm and remained available for download until 10:30am on Tuesday, May 2, 2017. If you updated/upgraded any of the following packages during that window, you may have retrieved and installed software which is unsuitable for use due to untested behavior.

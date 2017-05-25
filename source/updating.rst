@@ -14,7 +14,7 @@ Updating via Metapackage
 
     $ conda update -n astroconda stsci
 
-This is best used by individuals that favor software stability over receiving the "bleeding edge". Remember, updating the ``stsci`` package only effects packages part of the **official release** of our software. Packages provided by the AstroConda channel, but are not controlled by the ``stsci`` package **will not receive updates**. This is true for other packages as well (e.g. stsci-hst, stsci-data-analysis, etc).
+This is best used by individuals that favor software stability over receiving the "bleeding edge". Remember, updating the ``stsci`` package only effects packages part of the **official release** of our software. Packages provided by the AstroConda channel, but are not controlled by the ``stsci`` package **will not receive updates**. This is true for other packages as well (e.g. ``stsci-hst``, ``stsci-data-analysis``, etc).
 
 To clarify what this does, if the ``stsci`` package (used to create your environment) has not been updated by STScI to accommodate recently added packages, or newer versions of those packages, nothing will be updated in your environment on behalf of ``stsci``. In general, to receive interim bug fix releases please consider updating all packages, or individual packages of interest.
 
