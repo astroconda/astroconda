@@ -199,11 +199,11 @@ IRAF is an extremely large software package. Not every developer or scientist re
 
 If you wish to use IRAF, simply install it :
 
-``conda create -n iraf27 python=2.7 iraf pyraf stsci && source activate iraf27``
+``conda create -n iraf27 python=2.7 iraf-all pyraf-all stsci && source activate iraf27``
 
 If you are already using AstroConda under a Python 2 environment, you may simply install IRAF/PyRAF into that environment:
 
-``conda install -n astroconda iraf pyraf``
+``conda install -n astroconda iraf-all pyraf-all``
 
 .. _iraf_python3:
 
