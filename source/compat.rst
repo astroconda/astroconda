@@ -36,6 +36,66 @@ If you spot a compatibility problem not listed here please let us know by sendin
   **You may be affected by an issue if you have updated your AstroConda environment on or after the dates listed in each section below.**
 
 
+2018-01-24
+==========
+
+If you have installed or updated ``stsci``, ``stsci-hst``, or ``stwcs`` into a Python 2.7 environment, be aware, the release of ``stwcs`` (v1.4.0) is not compatible with Python 2.7.
+
+``stwcs`` v1.4.0 is known to negatively impact the following packages:
+
+* ``drizzlepac``
+* ``stsci.skypac``
+
+For anyone that has already installed ``stwcs`` (v1.4.0), the latest release of ``stsci-hst`` (v3.0.1) will automatically downgrade ``stwcs`` to v1.3.2. This downgrade behavior will not be observed in environments where the installed version of ``stwcs`` is less than v1.4.0.
+
+As of 2018-02-01, the Python 2.7 release of ``stwcs`` v1.4.0 was removed from the AstroConda channel.
+
+Am I affected?
+--------------
+
+Using ``find`` you can scan your Conda environments for ``stwcs`` v1.4.0. Be sure to replace ``/home/example/miniconda3`` with the path to your Anaconda or Miniconda installation. Depending on the number of environments installed and the seek time of your storage medium, this operation may take up to several minutes to complete.
+
+.. code-block:: sh
+
+    $ find /home/example/miniconda3/envs \
+    -wholename '*/lib/python2.7/site-packages/stwcs/version.py' \
+    | xargs grep --color -H "__version__.*'1.4.0'"
+
+**If no matches are returned, then you are not affected by this release, and no action required.**
+
+Otherwise, you may see results such as:
+
+.. code-block:: sh
+
+    ~/miniconda3/envs/astroconda27/lib/python2.7/site-packages/stwcs/version.py:__version__ = '1.4.0'
+    ~/miniconda3/envs/iraf27/lib/python2.7/site-packages/stwcs/version.py:__version__ = '1.4.0'
+
+In this example output, the ``astroconda27`` and ``iraf27`` Conda environments require your attention.
+
+Repairing your Environment(s)
+-----------------------------
+
+Conda keeps a local cache of packages to help speed up installations and upgrades. In order to safeguard against reinstalling the incorrect version of ``stwcs`` it is recommended that you purge this cache.
+
+This operation will not adversely affect your Conda installation. Packages will be redownloaded during the next installation or upgrade operation.
+
+.. code-block:: sh
+
+    $ conda clean --yes --index-cache --tarballs --packages
+
+Update the ``stsci-hst`` package for each affected environment:
+
+.. code-block:: sh
+
+    $ conda update -n ENV_NAME_HERE stsci-hst
+
+Or if you prefer to manually downgrade ``stwcs``, do this instead:
+
+.. code-block:: sh
+
+    $ conda install -n ENV_NAME_HERE stwcs=1.3.2
+
+
 2017-05-24
 ==========
 
