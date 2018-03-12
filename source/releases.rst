@@ -50,6 +50,26 @@ HST Data Processing (HSTDP)
 
 This list is in reverse chronological order, with the most recent release appearing first and older ones beneath.
 
+2018.1
++++++++
+
+========  ======  ===
+PLATFORM  Python  URL
+========  ======  ===
+Linux     3.5     http://ssb.stsci.edu/releases/hstdp/2018.1/hstdp-2018.1-linux-py35.final.txt
+OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2018.1/hstdp-2018.1-osx-py35.final.txt
+========  ======  ===
+
+2017.3
++++++++
+
+========  ======  ===
+PLATFORM  Python  URL
+========  ======  ===
+Linux     3.5     http://ssb.stsci.edu/releases/hstdp/2017.3/hstdp-2017.3-linux-py35.final.txt
+OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2017.3/hstdp-2017.3-osx-py35.final.txt
+========  ======  ===
+
 2017.2a
 +++++++
 
