@@ -21,6 +21,19 @@ Conda is an open-source software package management system provided and maintain
 - **Familiar with conda**: :ref:`configure_astroconda_channel`
 
 
+IMPORTANT NOTE:     If you are using conda `4.3.30` or older, please upgrade to the latest version before attempting to install or update any packages due to a bug in older versions that makes a large number of packages invisible and unable to be installed. Upgrading conda may require two steps. The following commands will allow you to verify that the upgrade was successful.::
+
+   # source activate root
+   # conda --version
+   conda 4.3.30
+   # conda update conda
+   # conda --version
+   conda 4.3.31
+   # conda update conda
+   # conda --version
+   conda 4.5.4 (Or whatever the latest version happens to be.)
+
+
 To receive AstroConda announcements, or engage in general discussion, feel free to subscribe to our `mailing list <https://groups.google.com/forum/#!forum/astroconda>`_.
 
 
