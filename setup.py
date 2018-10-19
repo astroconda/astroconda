@@ -4,13 +4,13 @@ from setuptools.command.install import install
 
 import sys
 sys.path.insert(0, 'source/')
-import release_notes
+#import release_notes
 import package_manifest
 
 class MyInstall(install):
     def run(self):
         install.run(self)
-        release_notes.generate_release_notes()
+        #release_notes.generate_release_notes()
         package_manifest.generate_manifest()
 
 setup(
