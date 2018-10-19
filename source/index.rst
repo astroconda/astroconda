@@ -20,8 +20,9 @@ Conda is an open-source software package management system provided and maintain
 - **New to conda**: :ref:`getting_started_jump`
 - **Familiar with conda**: :ref:`configure_astroconda_channel`
 
+.. warning::  Due to some currently missing python 3.7 Astroconda packages, the dependency solving process stalls for the package set that's selected by running conda create without an explicit python version, since conda selects the most recent available by default, which is currently 3.7. To allow creation of new environments, for the time being specify a python version _other_ than 3.7 explicitly on the command line. i.e. `$ conda create -n astroconda stsci python=3.6`.
 
-IMPORTANT NOTE:     If you are using conda `4.3.30` or older, please upgrade to the latest version before attempting to install or update any packages due to a bug in older versions that makes a large number of packages invisible and unable to be installed. Upgrading conda may require two steps. The following commands will allow you to verify that the upgrade was successful.::
+.. note::  If you are using conda `4.3.30` or older, please upgrade to the latest version before attempting to install or update any packages due to a bug in older versions that makes a large number of packages invisible and unable to be installed. Upgrading conda may require two steps. The following commands will allow you to verify that the upgrade was successful.::
 
    # source activate root
    # conda --version
