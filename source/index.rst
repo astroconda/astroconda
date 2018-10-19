@@ -29,13 +29,13 @@ Conda is an open-source software package management system provided and maintain
 
    $ source activate root
    $ conda --version
-   conda 4.3.30
+     conda 4.3.30
    $ conda update conda
    $ conda --version
-   conda 4.3.31
+     conda 4.3.31
    $ conda update conda
    $ conda --version
-   conda 4.5.4 (Or whatever the latest version happens to be.)
+     conda 4.5.4 (Or whatever the latest version happens to be.)
 
 
 To receive AstroConda announcements, or engage in general discussion, feel free to subscribe to our `mailing list <https://groups.google.com/forum/#!forum/astroconda>`_.
