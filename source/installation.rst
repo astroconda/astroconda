@@ -34,10 +34,6 @@ In order to install packages directly from the AstroConda channel you will need 
 Standard Software Stack (without IRAF)
 ======================================
 
-.. warning::  Due to some currently missing python 3.7 Astroconda packages, the dependency solving process stalls for the package set that's selected by running conda create without an explicit python version, since conda selects the most recent available by default, which is currently 3.7. To allow creation of new environments, for the time being specify a python version _other_ than 3.7 explicitly on the command line.::
-
-   $ conda create -n astroconda stsci python=3.6
-
 The package management system, Conda, is now configured to pull from our repository, so you may go ahead and install the ``stsci`` package. This package installs nearly all of the software provided by STScI in one shot.
 
 The following example generates a new conda environment named "astroconda", however this naming convention is merely a suggestion. Feel free to use a name that works best for you.
