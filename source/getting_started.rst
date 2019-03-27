@@ -17,8 +17,8 @@ Both of Continuum's official distributions support a variety of operating system
 
 Now head over to **one** of the following sites and download a copy of the installer of your choice:
 
-- Download `Miniconda <https://conda.io/miniconda.html>`_
-- Download `Anaconda <https://www.continuum.io/downloads>`_ (OS X users should choose the command-line installer)
+- Download `Miniconda <https://docs.conda.io/en/latest/miniconda.html>`_
+- Download `Anaconda <https://www.anaconda.com/distribution/>`_ (OS X users should choose the command-line installer)
 
 The installation method used for Miniconda and Anaconda are identical, however keep in mind the scripts are written in BASH (not SH), so therefore you *must* execute the installer using ``bash``:
 
