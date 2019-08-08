@@ -60,6 +60,10 @@ To deactivate the "astroconda" environment, close your terminal window or run:
 Legacy Software Stack (with IRAF)
 =================================
 
+.. raw:: html
+
+  <b><font size="5" color="red">PLEASE NOTE: STScI will discontinue providing help desk support for IRAF starting October 1, 2019. Support may be sought thereafter via the IRAF forum <a href="https://iraf.net/forum/index.php">https://iraf.net/forum/index.php</a> or <a href="https://github.com/iraf-community/iraf">iraf-community</a> on Github.</font></b>
+
 The maintainers of the AstroConda channel have limited resources to support :abbr:`IRAF (Image Reduction and Analysis Facility)`, but users that require the ability to run IRAF and PyRAF tasks may want to install it via AstroConda. For help with any issues that come up during installation or use, please visit the `PyRAF FAQ <http://www.stsci.edu/institute/software_hardware/pyraf/pyraf_faq>`_. **Linux users** please be sure to visit `this FAQ entry <faq.html#in-linux-how-do-i-install-iraf-s-32-bit-dependencies>`_ for a quick guide to installing IRAF's 32-bit dependencies.
 
 The package management system, Conda, is now configured to pull from our repository, so you may go ahead and install the ``iraf-all`` package, as well as ``pyraf-all``, and finally ``stsci``. The ``stsci`` package installs nearly all of the software provided by STScI in one shot, however if you prefer a slimmed down IRAF/PyRAF experience, feel free to omit it.
