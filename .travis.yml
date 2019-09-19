@@ -12,6 +12,9 @@ addons:
             - texlive-latex-extra
             - dvipng
 
+services:
+    - xvfb
+
 os:
     - linux
 
@@ -41,10 +44,6 @@ before_install:
     - conda config --set always_yes yes --set changeps1 no
     - conda update -q conda
     - conda info -a
-
-    #CHECK INTERACTIVE MATPLOTLIB BACKENDS
-    - export DISPLAY=:99.0
-    - sh -e /etc/init.d/xvfb start
 
 
 install:
