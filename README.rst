@@ -5,10 +5,6 @@ Astroconda
     :target: http://astroconda.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
-.. image:: https://travis-ci.org/astroconda/astroconda.svg?branch=master
-    :target: https://travis-ci.org/astroconda/astroconda
-    :alt: CI Build Status
-
 AstroConda is a free software repository maintained by the Space Telescope
 Science Institute (STScI) in Baltimore, Maryland. This repository provides tools
 and utilities commonly used by the astronomical community.
