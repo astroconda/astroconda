@@ -54,6 +54,7 @@ https://github.com/astroconda/astroconda-releases/tree/master/caldp
 These deliveries are, in reverse chronological order:
 
 .. code-block:: sh
+
     20200323  (Note: the date here represents the initial testing iteration and not the final public release date.)
 
 Historical deliveries using an older naming convention may be found here:
