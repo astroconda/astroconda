@@ -52,30 +52,35 @@ Instructions for installation of each delivery may be found in the respective su
 https://github.com/astroconda/astroconda-releases/tree/master/caldp
 
 These deliveries are, in reverse chronological order:
-20200323  (Note: the date here represents the initial testing iteration and not the final public release date.)
+
+.. code-block:: sh
+    20200323  (Note: the date here represents the initial testing iteration and not the final public release date.)
 
 Historical deliveries using an older naming convention may be found here:
 https://github.com/astroconda/astroconda-releases/tree/master/hstdp
 
 These deliveries are, in reverse chronological order:
-2019.3a 
-2019.5 	
-2019.5.2
-2019.5.1
-2019.4 	
-2019.3c 
-2019.3b 
-2019.3 	
-2019.2 	
-2018.3a 
-2018.3 	
-2018.1 	
-2017.3 	
-2017.2a 
-2017.2 	
-2017.1 	
-2016.2 	
-2016.1 	
+
+.. code-block:: sh
+
+    2019.3a 
+    2019.5 	
+    2019.5.2
+    2019.5.1
+    2019.4 	
+    2019.3c 
+    2019.3b 
+    2019.3 	
+    2019.2 	
+    2018.3a 
+    2018.3 	
+    2018.1 	
+    2017.3 	
+    2017.2a 
+    2017.2 	
+    2017.1 	
+    2016.2 	
+    2016.1 	
 
 
 Continuous Integration
