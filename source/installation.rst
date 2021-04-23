@@ -40,7 +40,7 @@ The following example generates a new conda environment named "astroconda", howe
 
 .. code-block:: sh
 
-    $ conda create -n astroconda stsci
+    $ conda create -n astroconda python=3.7 stsci
 
 After the installation is complete go ahead and activate the "astroconda" environment. This command only needs to be executed one time per terminal session.
 
