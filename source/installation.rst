@@ -1,4 +1,15 @@
 ##########################
+Install the default software stack via conda-forge
+##########################
+
+You can run the following command to install the software stack included in Astroconda using conda-forge:
+
+.. code-block:: sh
+
+    $ conda create -n astroconda --file [insert URL of conda environment YAML file here]
+    
+
+##########################
 Selecting a Software Stack
 ##########################
 
