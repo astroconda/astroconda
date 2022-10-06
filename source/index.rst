@@ -1,6 +1,9 @@
 Welcome to AstroConda Channel's documentation!
 ==============================================
 
+.. warning::
+    For newer versions of Python and support for the JWST pipeline, we recommend that users use ``stenv`` (https://github.com/spacetelescope/stenv) to manage local installation of space telescope packages.
+
 AstroConda is a free Conda channel maintained by the `Space Telescope Science Institute <http://www.stsci.edu/>`_ (STScI) in Baltimore, Maryland.  This channel provides tools and utilities required to process and analyze data from the Hubble Space Telescope (HST), James Webb Space Telescope (JWST), and others.
 
 .. _system_requirements:
