@@ -6,7 +6,7 @@ Astroconda
     :alt: Documentation Status
 
 :Warning:
-    **For newer versions of Python and support for the JWST pipeline, we recommend that users use ``stenv`` (https://github.com/spacetelescope/stenv) to manage local installation of STSCI packages.**
+    For newer versions of Python and support for the JWST pipeline, we recommend that users use ``stenv`` (https://github.com/spacetelescope/stenv) to manage local installation of STScI packages.
 
 AstroConda is a free software repository maintained by the Space Telescope
 Science Institute (STScI) in Baltimore, Maryland. This repository provides tools
