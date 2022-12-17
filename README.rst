@@ -1,24 +1,10 @@
-Astroconda
-##########
+STScI will end support for astroconda on February 1st, 2023
+###########################################################
 
-.. image:: http://readthedocs.org/projects/astroconda/badge/?version=latest
-    :target: http://astroconda.readthedocs.io/en/latest/?badge=latest
-    :alt: Documentation Status
-
-AstroConda is a free software repository maintained by the Space Telescope
-Science Institute (STScI) in Baltimore, Maryland. This repository provides tools
-and utilities commonly used by the astronomical community.
-
-Contributing and Issues
-#######################
-Please open a new issue or send us a pull request for bugs, feedback, questions, or enhancements.
-
-*  For documentation issues use the `astroconda issue tracker <https://github.com/astroconda/issues>`_
-*  For recipe issues, use the `astroconda-contrib issue tracker <https://github.com/astroconda-contrib/issues>`_
+.. warning::
+    Astroconda is superseded by `stenv <https://stenv.readthedocs.io/en/latest>`_.
+   `stenv` provides a common environment for both the Hubble Space Telescope (HST) and the James Webb Space Telescope (JWST) pipelines and includes most of the packages in Astroconda. Questions can be directed to the HST Help Desk: hsthelp.stsci.edu.
 
 
-More Information
-################
 
-See the `full documentation <http://astroconda.readthedocs.io/en/latest/>`_ for
-additional information.
+`Full Astroconda documentation <http://astroconda.readthedocs.io/en/latest/>`_ 
